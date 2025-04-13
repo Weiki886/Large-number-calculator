@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频转音频工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h1>视频转音频工具</h1>
+            <p>这是一个纯前端应用，所有处理都在您的浏览器中完成。视频不会上传到任何服务器。</p>
+        </div>
+        
+        <div id="error-message" class="error" style="display: none;"></div>
+        <div id="success-message" class="success" style="display: none;"></div>
+        
+        <div class="form-group">
+            <label for="video">选择视频文件:</label>
+            <input type="file" id="video" accept="video/*" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="format">选择输出格式:</label>
+            <select id="format">
+                <option value="mp3">MP3</option>
+                <option value="wav">WAV</option>
+                <option value="aac">AAC</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="filename">自定义输出文件名称 (不含扩展名):</label>
+            <input type="text" id="filename" placeholder="输入文件名 (默认为'音频文件')">
+        </div>
+        
+        <button id="convert-btn" class="btn">转换</button>
+        
+        <div id="progress-container">
+            <h3>正在处理...</h3>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div id="status">加载中...</div>
+        </div>
+        
+        <div id="download-container">
+            <h3>转换完成!</h3>
+            <p>您的音频文件已准备好下载</p>
+            <a id="download-link" href="#" download>下载音频文件</a>
+        </div>
+        
+        <div id="log"></div>
+    </div>
+
+    <footer class="footer">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            © Weiki 视频转音频工具 | 完全在浏览器中运行，您的数据不会上传至任何服务器
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
